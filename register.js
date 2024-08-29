@@ -6,9 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             const email = document.getElementById('register-email').value;
             const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
 
-            if (!email || !password) {
+            if (!email || !password || !confirmPassword) {
                 alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('As senhas não coincidem. Por favor, tente novamente.');
                 return;
             }
 
